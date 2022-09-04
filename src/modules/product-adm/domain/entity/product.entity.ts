@@ -13,7 +13,31 @@ type ProductProps = {
 };
 
 export default class Product extends BaseEntity implements AggregateRoot {
-  constructor(private props: ProductProps) {
-    super(props.id);
+  constructor(private _props: ProductProps) {
+    super(_props.id);
+  }
+
+  get name(): string {
+    return this._props.name;
+  }
+
+  get description(): string {
+    return this._props.description;
+  }
+
+  get purchasePrice(): number {
+    return this._props.purchasePrice;
+  }
+
+  get stock(): number {
+    return this._props.stock;
+  }
+
+  get createdAt(): Date {
+    return this._props.createdAt;
+  }
+
+  get updatedAt(): Date {
+    return this._props.updatedAt;
   }
 }
