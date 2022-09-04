@@ -1,4 +1,4 @@
-import Id from "../value-objects/id.value-object";
+import Id from "../value-object/id.value-object";
 
 export default class BaseEntity {
   private readonly _id: Id;

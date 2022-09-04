@@ -1,6 +1,6 @@
-import BaseEntity from "../../../@shared/domain/entities/base.entity";
-import AggregateRoot from "../../../@shared/domain/entities/aggregate-root.interface";
-import Id from "../../../@shared/domain/value-objects/id.value-object";
+import BaseEntity from "../../../@shared/domain/entity/base.entity";
+import AggregateRoot from "../../../@shared/domain/entity/aggregate-root.interface";
+import Id from "../../../@shared/domain/value-object/id.value-object";
 
 type ProductProps = {
   readonly id?: Id;
