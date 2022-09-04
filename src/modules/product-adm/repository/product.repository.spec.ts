@@ -46,4 +46,27 @@ describe("ProductRepository integration tests", function () {
     expect(productFromDb.purchasePrice).toBe(productProps.purchasePrice);
     expect(productFromDb.stock).toBe(productProps.stock);
   });
+
+  it("should find a product by id", async function () {
+    const productRepository = new ProductRepository();
+
+    await ProductModel.create({
+      id: "1",
+      name: "Product 1",
+      description: "Product 1 description",
+      purchasePrice: 100,
+      stock: 10,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+
+    const product = await productRepository.findById("1");
+
+    expect(product).toBeDefined();
+    expect(product.id.id).toBe("1");
+    expect(product.name).toBe("Product 1");
+    expect(product.description).toBe("Product 1 description");
+    expect(product.purchasePrice).toBe(100);
+    expect(product.stock).toBe(10);
+  });
 });
